@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <v-ons-navigator swipeable swipe-target-width="200px"
+      :options="{animation: nav_animation}"
       :page-stack="pageStack"
       :pop-page="goBack"
     ></v-ons-navigator>
@@ -14,7 +15,20 @@ export default {
 
   data() {
     return {
+      nav_animation: 'fade',
       pageStack: []
+    }
+  },
+  watch:{
+    pageStack:function () {
+      console.log('pageStack watch 👀!');
+      if(this.$route.name === 'Error' || this.$route.name === 'Home'){
+        this.nav_animation = 'fade';
+      }else if(this.$route.name === 'Home'){
+        this.nav_animation = 'slide';
+      }else{
+        this.nav_animation = 'slide';
+      }
     }
   },
 

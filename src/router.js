@@ -2,6 +2,8 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import Template from './components/Template';
 
+import Error_Page from './Error.vue';
+
 Vue.use(Router);
 
 const extend = name => ({ name, extends: Template });
@@ -50,6 +52,11 @@ const router = new Router({
           ]
         }
       ]
+    },
+    {
+      path: '*',
+      name: 'Error',
+      component: Error_Page,
     }
   ]
 });

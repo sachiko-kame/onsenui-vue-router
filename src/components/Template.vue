@@ -1,7 +1,8 @@
 <template>
   <v-ons-page>
     <v-ons-toolbar>
-      <div class="left">
+      <div class="left" v-if="$options.name === 'Home'"></div>
+      <div class="left" v-else>
         <v-ons-back-button>Back</v-ons-back-button>
       </div>
       <div class="center">{{$options.name}}</div>
