@@ -4,6 +4,8 @@ import Template from './components/Template';
 
 import Error_Page from './Error.vue';
 
+import Tabbar_Page from './Tabbar/TabbarSample.vue';
+
 Vue.use(Router);
 
 const extend = name => ({ name, extends: Template });
@@ -19,6 +21,11 @@ const router = new Router({
           path: 'Child-1',
           name: 'Child-1',
           component: extend('Child-1'),
+        },
+        {
+          path: 'Tabbar',
+          name: 'Tabbar',
+          component: Tabbar_Page,
           children: [
             {
               path: 'Child-1-1',

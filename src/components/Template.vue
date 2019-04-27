@@ -44,6 +44,14 @@
         </router-link></li>
       </ol>
     </div>
+
+    <br>
+    <div class="links">
+      <router-link :to="{name: 'Tabbar'}">
+        Go Tabbar_Page
+      </router-link>
+    </div>
+
   </v-ons-page>
 </template>
 
